@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wbs21.github.io/brickstep/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wbs21.github.io/brickstep/assets/01-viewer-web.jpg</image:loc>
+      <image:title>BrickStep step-by-step 3D model viewer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wbs21.github.io/brickstep/assets/05-part-selection-web.jpg</image:loc>
+      <image:title>Select a part and highlight matching instances in BrickStep</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wbs21.github.io/brickstep/assets/03-parts-search-web.jpg</image:loc>
+      <image:title>Search and export a bill of materials in BrickStep</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://wbs21.github.io/brickstep/support.html</loc>

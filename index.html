@@ -4,18 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1117">
-  <title>BrickStep — LDraw &amp; BrickLink Studio Model Viewer</title>
-  <meta name="description" content="BrickStep is a native iPhone and iPad viewer for LDraw, MPD, and BrickLink Studio models. Explore building steps in 3D, inspect parts, and export a bill of materials.">
+  <title>BrickStep — LDraw, MPD &amp; Studio Model Viewer</title>
+  <meta name="description" content="Open local LDraw, MPD, and BrickLink Studio model files. Review building steps in 3D, inspect parts, and export a bill of materials.">
   <link rel="canonical" href="https://wbs21.github.io/brickstep/">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="robots" content="index, follow">
+  <meta name="apple-itunes-app" content="app-id=6837612015">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="BrickStep — LDraw &amp; BrickLink Studio Model Viewer">
-  <meta property="og:description" content="Open LDraw, MPD, and BrickLink Studio models on iPhone and iPad. Explore building steps in 3D, inspect parts, and export a bill of materials.">
+  <meta property="og:site_name" content="BrickStep">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="BrickStep — LDraw, MPD &amp; Studio Model Viewer">
+  <meta property="og:description" content="Open local LDraw, MPD, and BrickLink Studio model files. Review building steps in 3D, inspect parts, and export a bill of materials.">
   <meta property="og:url" content="https://wbs21.github.io/brickstep/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="BrickStep — LDraw &amp; BrickLink Studio Model Viewer">
-  <meta name="twitter:description" content="Open LDraw, MPD, and BrickLink Studio models on iPhone and iPad. Explore building steps in 3D, inspect parts, and export a bill of materials.">
+  <meta property="og:image" content="https://wbs21.github.io/brickstep/assets/brickstep-social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="BrickStep app interface showing a step-by-step 3D brick model">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BrickStep — LDraw, MPD &amp; Studio Model Viewer">
+  <meta name="twitter:description" content="Open local LDraw, MPD, and BrickLink Studio model files. Review building steps in 3D, inspect parts, and export a bill of materials.">
+  <meta name="twitter:image" content="https://wbs21.github.io/brickstep/assets/brickstep-social-preview.jpg">
+  <meta name="twitter:image:alt" content="BrickStep app interface showing a step-by-step 3D brick model">
   <style>
     :root {
       color-scheme: dark;
@@ -30,6 +41,7 @@
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; height: auto; }
     body {
       margin: 0;
       background:
@@ -45,6 +57,27 @@
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+      gap: 38px;
+      align-items: center;
+    }
+    .hero-copy { min-width: 0; }
+    .hero-media { margin: 0; }
+    .hero-media a { display: block; }
+    .hero-media img {
+      width: 100%;
+      max-height: 620px;
+      object-fit: contain;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 22px;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .42);
+    }
+    .hero-media figcaption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
     }
     .eyebrow {
       margin: 0 0 10px;
@@ -80,6 +113,13 @@
       text-decoration: none;
     }
     .button.secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .availability {
+      margin: 18px 0 0;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .store-note { margin-top: 12px; color: var(--muted); font-size: 13px; }
     section { margin-top: 24px; padding: 30px 34px; background: var(--panel); border: 1px solid var(--border); border-radius: 22px; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
     .card { padding: 24px; background: var(--raised); border: 1px solid var(--border); border-radius: 18px; }
@@ -87,13 +127,48 @@
     .steps { margin: 0; padding-left: 22px; }
     .steps li { margin: 0 0 10px; }
     .steps li:last-child { margin-bottom: 0; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .gallery figure { margin: 0; }
+    .gallery img {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
+    }
+    .gallery figcaption { margin-top: 9px; color: var(--muted); font-size: 13px; }
+    .cta-panel {
+      border-color: rgba(89, 210, 185, .42);
+      background: linear-gradient(135deg, #17202b, #1b3034);
+    }
+    .video-poster {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 28px;
+      align-items: center;
+    }
+    .video-poster img {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
     footer { margin-top: 28px; color: var(--muted); font-size: 13px; line-height: 1.6; text-align: center; }
+    footer a { color: var(--muted); }
     @media (max-width: 680px) {
       main { width: 100%; margin: 0; }
       .hero, section { border-radius: 0; border-left: 0; border-right: 0; }
       .hero { padding: 34px 22px 30px; }
+      .hero { grid-template-columns: 1fr; gap: 26px; }
+      .hero-media { max-width: 460px; margin: 0 auto; }
       section { padding: 26px 22px; }
       .grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery figure { max-width: 480px; margin: 0 auto; }
+      .video-poster { grid-template-columns: 1fr; }
       footer { padding: 0 22px 28px; }
     }
   </style>
@@ -103,9 +178,31 @@
     "@type": "SoftwareApplication",
     "name": "BrickStep",
     "applicationCategory": "GraphicsApplication",
-    "operatingSystem": "iOS 18 or later",
-    "description": "BrickStep is a native iPhone and iPad viewer for LDraw, MPD, and BrickLink Studio models. Explore building steps in 3D, inspect parts, and export a bill of materials.",
+    "applicationSubCategory": "3D model viewer",
+    "operatingSystem": "iPadOS 18.0 or later",
+    "softwareVersion": "1.0.0",
+    "description": "BrickStep is a 3D viewer for LDraw, MPD, and BrickLink Studio models. Explore building steps, inspect parts, and export a bill of materials.",
     "url": "https://wbs21.github.io/brickstep/",
+    "downloadUrl": "https://apps.apple.com/us/app/brickstep/id6837612015",
+    "installUrl": "https://apps.apple.com/us/app/brickstep/id6837612015",
+    "image": "https://wbs21.github.io/brickstep/assets/brickstep-social-preview.jpg",
+    "screenshot": [
+      "https://wbs21.github.io/brickstep/assets/01-viewer-web.jpg",
+      "https://wbs21.github.io/brickstep/assets/05-part-selection-web.jpg",
+      "https://wbs21.github.io/brickstep/assets/03-parts-search-web.jpg"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "4.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "eligibleRegion": {
+        "@type": "Country",
+        "name": "United States"
+      }
+    },
+    "isAccessibleForFree": false,
+    "inLanguage": "en-US",
     "author": {
       "@type": "Organization",
       "name": "Beijing Wuwei Rabbit Graphic Design Center (Sole Proprietorship)"
@@ -116,19 +213,29 @@
 <body>
   <main>
     <header class="hero">
-      <p class="eyebrow">iPhone &middot; iPad</p>
-      <h1>BrickStep</h1>
-      <p class="lede">A native 3D viewer for LDraw, MPD, and BrickLink Studio models.</p>
-      <p class="muted">Open a model on your iPhone or iPad, follow the build step by step, inspect individual parts, and export a bill of materials. Everything runs locally.</p>
-      <ul class="chips" aria-label="Supported file formats">
-        <li>.io</li>
-        <li>.ldr</li>
-        <li>.mpd</li>
-      </ul>
-      <nav class="actions" aria-label="BrickStep pages">
-        <a class="button" href="support.html">Support</a>
-        <a class="button secondary" href="privacy.html">Privacy Policy</a>
-      </nav>
+      <div class="hero-copy">
+        <p class="eyebrow">Local 3D model viewer</p>
+        <h1>BrickStep</h1>
+        <p class="lede">Open local LDraw, MPD, and BrickLink Studio models in step-by-step 3D.</p>
+        <p class="muted">Review building steps in 3D, inspect individual parts, and export the parts list you need. Model parsing and view preparation happen on the device.</p>
+        <p class="availability">Available now on the U.S. App Store</p>
+        <ul class="chips" aria-label="Supported file formats">
+          <li>.io</li>
+          <li>.ldr</li>
+          <li>.mpd</li>
+        </ul>
+        <nav class="actions" aria-label="BrickStep actions">
+          <a class="button" href="https://apps.apple.com/us/app/brickstep/id6837612015">View on the App Store</a>
+          <a class="button secondary" href="https://www.youtube.com/shorts/UNNlC1eFwHs">Watch the 15-second demo</a>
+        </nav>
+        <p class="store-note">Current release: iPadOS 18+ and U.S. App Store. The App Store listing and YouTube video are currently in English.</p>
+      </div>
+      <figure class="hero-media">
+        <a href="https://apps.apple.com/us/app/brickstep/id6837612015" aria-label="View BrickStep on the U.S. App Store">
+          <img src="assets/01-viewer-web.jpg" width="825" height="1100" alt="BrickStep showing a seven-step brick model with step navigation and a parts list">
+        </a>
+        <figcaption>Explore a model, navigate its steps, and inspect the current parts list.</figcaption>
+      </figure>
     </header>
 
     <section>
@@ -148,6 +255,25 @@
       </ol>
     </section>
 
+    <section>
+      <h2>See the workflow</h2>
+      <p>These screens use BrickStep's bundled demonstration model. Switch between the model view, matching-part highlights, and the searchable parts list.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/05-part-selection-web.jpg" width="720" height="960" loading="lazy" alt="A selected yellow part with matching yellow instances highlighted in a 3D brick model">
+          <figcaption>Select a part and reveal matching instances.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/03-parts-search-web.jpg" width="720" height="960" loading="lazy" alt="BrickStep parts list with a search filter and part counts">
+          <figcaption>Search the bill of materials and export it as CSV.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/01-viewer-web.jpg" width="825" height="1100" loading="lazy" alt="BrickStep step navigation beside a complete 3D model">
+          <figcaption>Move through the full building sequence in 3D.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <div class="grid">
       <article class="card">
         <h3>Bill of materials</h3>
@@ -163,9 +289,23 @@
       </article>
       <article class="card">
         <h3>Made for touch</h3>
-        <p>An iPad workspace with step and inspector columns, and a full-screen iPhone viewer with focused sheets.</p>
+        <p>A focused workspace with step and inspector columns, direct gestures, and camera presets.</p>
       </article>
     </div>
+
+    <section class="video-poster">
+      <a href="https://www.youtube.com/shorts/UNNlC1eFwHs" aria-label="Watch the BrickStep demo on YouTube">
+        <img src="assets/brickstep-social-preview.jpg" width="1200" height="630" loading="lazy" alt="BrickStep title card with an app icon and a 3D model preview">
+      </a>
+      <div>
+        <h2>See it in motion</h2>
+        <p>Watch the short demonstration of opening a model, reviewing building steps, finding matching parts, and checking the parts list.</p>
+        <nav class="actions" aria-label="BrickStep video">
+          <a class="button" href="https://www.youtube.com/shorts/UNNlC1eFwHs">Watch on YouTube</a>
+          <a class="button secondary" href="https://www.youtube.com/@BrickStep">Visit the BrickStep channel</a>
+        </nav>
+      </div>
+    </section>
 
     <section>
       <h2>Questions or feedback?</h2>
@@ -173,9 +313,18 @@
       <p class="muted">Read the <a href="privacy.html">BrickStep Privacy Policy</a>.</p>
     </section>
 
+    <section class="cta-panel">
+      <h2>Ready to inspect your model?</h2>
+      <p>BrickStep is available through the U.S. App Store. The current release requires iPadOS 18 or later.</p>
+      <nav class="actions" aria-label="Download BrickStep">
+        <a class="button" href="https://apps.apple.com/us/app/brickstep/id6837612015">View BrickStep on the App Store</a>
+      </nav>
+    </section>
+
     <footer>
       <p>BrickStep is an independent product and is not affiliated with or endorsed by the LEGO Group, BrickLink, or the LDraw organization.</p>
-      <p>&copy; 2026 Beijing Wuwei Rabbit Graphic Design Center (Sole Proprietorship)</p>
+      <p><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="https://www.youtube.com/@BrickStep">YouTube</a> &middot; <a href="https://apps.apple.com/us/app/brickstep/id6837612015">App Store</a></p>
+      <p>&copy; 2026 Beijing Wuwei Rabbit Graphic Design Center (Sole Proprietorship) &middot; Updated November 22, 2026</p>
     </footer>
   </main>
 </body>

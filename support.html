@@ -3,11 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BrickStep Support</title>
+  <title>BrickStep Support — LDraw, MPD &amp; Studio Models</title>
   <meta name="description" content="BrickStep support for LDraw, MPD, and BrickLink Studio files: supported formats, LDraw library setup, gestures, large-model limits, and contact.">
   <link rel="canonical" href="https://wbs21.github.io/brickstep/support.html">
+  <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="robots" content="index, follow">
+  <meta name="apple-itunes-app" content="app-id=6837612015">
   <meta name="theme-color" content="#0c1117">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BrickStep">
+  <meta property="og:title" content="BrickStep Support — LDraw, MPD &amp; Studio Models">
+  <meta property="og:description" content="Supported files, LDraw library setup, gestures, large-model guidance, and compatibility help for BrickStep.">
+  <meta property="og:url" content="https://wbs21.github.io/brickstep/support.html">
+  <meta property="og:image" content="https://wbs21.github.io/brickstep/assets/brickstep-social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BrickStep Support — LDraw, MPD &amp; Studio Models">
+  <meta name="twitter:description" content="Supported files, LDraw library setup, gestures, large-model guidance, and compatibility help for BrickStep.">
+  <meta name="twitter:image" content="https://wbs21.github.io/brickstep/assets/brickstep-social-preview.jpg">
   <style>
     :root { color-scheme: dark; --bg: #0c1117; --panel: #17202b; --text: #edf2f7; --muted: #a8b3c2; --accent: #f4b849; }
     * { box-sizing: border-box; }
@@ -19,15 +34,112 @@
     .muted { color: var(--muted); }
     a { color: var(--accent); }
     code { color: var(--accent); }
+    .site-nav { display: flex; flex-wrap: wrap; gap: 12px 18px; margin: 0 0 22px; font-size: 14px; }
+    .site-nav a { text-decoration: none; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 8px; }
+    .button {
+      display: inline-block;
+      padding: 9px 14px;
+      border: 1px solid var(--border, #2b3a4b);
+      border-radius: 10px;
+      background: var(--accent);
+      color: #15100a;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button.secondary { background: transparent; color: var(--text); }
+    details { margin: 12px 0; padding: 14px 16px; background: #1e2a38; border: 1px solid #2b3a4b; border-radius: 12px; }
+    summary { cursor: pointer; color: var(--text); font-weight: 650; }
+    details p { margin: 12px 0 0; }
     @media (max-width: 600px) { main { margin: 0; width: 100%; min-height: 100vh; border-radius: 0; padding: 28px 22px; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which model files can BrickStep open?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BrickStep opens local .io, .ldr, and .mpd files from Files or another document provider."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the current device requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The current BrickStep release requires iPadOS 18.0 or later. The interface is in English."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BrickStep render BrickLink Studio instruction page layouts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Studio instruction page layouts, callouts, and custom instruction graphics are not rendered. Step order and added parts are derived from the embedded LDraw data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BrickStep require an account or network connection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BrickStep does not require an account or login. Model parsing and view preparation occur locally on the iPad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I connect an external LDraw library?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tap LDraw Library and select the root folder of an LDraw installation containing the parts and p folders. Access is limited to the folder selected by the user."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <main>
+    <nav class="site-nav" aria-label="BrickStep pages">
+      <a href="./">BrickStep Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.youtube.com/@BrickStep">YouTube</a>
+      <a href="https://apps.apple.com/us/app/brickstep/id6837612015">U.S. App Store</a>
+    </nav>
     <h1>BrickStep Support</h1>
-    <p class="muted">Help for BrickStep on iPhone and iPad</p>
+    <p class="muted">Help for BrickStep</p>
+    <p>Current requirements: iPadOS 18.0 or later. The release is currently available in the United States, and the interface is in English.</p>
+    <nav class="actions" aria-label="Support actions">
+      <a class="button" href="https://apps.apple.com/us/app/brickstep/id6837612015">View on the U.S. App Store</a>
+      <a class="button secondary" href="https://www.youtube.com/shorts/UNNlC1eFwHs">Watch the demo</a>
+    </nav>
     <h2>Supported Files</h2>
     <p>BrickStep opens local <code>.io</code>, <code>.ldr</code>, and <code>.mpd</code> files. Tap <strong>Open Model</strong> and choose a file from Files or another document provider.</p>
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>Can I open more than one model?</summary>
+      <p>Yes. Use <strong>Open Model</strong> to choose another local file. Recent model bookmarks remain available on the device.</p>
+    </details>
+    <details>
+      <summary>Do I need to upload my model?</summary>
+      <p>No. BrickStep processes the selected file locally on the iPad. No account or developer-operated cloud service is required.</p>
+    </details>
+    <details>
+      <summary>Why does my Studio file not look like a Studio instruction page?</summary>
+      <p>BrickStep is a 3D model viewer rather than a Studio page-layout renderer. Studio instruction page layouts, callouts, and custom instruction graphics are not rendered. Step order and added parts are derived from the embedded LDraw data.</p>
+    </details>
+    <details>
+      <summary>How do I export a parts list?</summary>
+      <p>Open the BOM tab, choose the complete model or current step, search for a part or color if needed, and use the export control to save a CSV file.</p>
+    </details>
+    <details>
+      <summary>What should I include in a compatibility report?</summary>
+      <p>Include the file extension, approximate part and step counts, device model, OS version, and the error message. Do not share a private model file unless you are comfortable doing so.</p>
+    </details>
     <h2>Detailed Geometry</h2>
     <p>For complete part geometry, tap <strong>LDraw Library</strong> and select the root of an LDraw installation that contains the <code>parts</code> and <code>p</code> folders. Access is limited to the folder selected by the user.</p>
     <h2>Gestures</h2>
@@ -38,7 +150,7 @@
     <p>Studio instruction page layouts, callouts, and custom instruction graphics are not currently rendered. Step order and added parts are derived from embedded LDraw data.</p>
     <h2>Contact</h2>
     <p>Email: <a href="mailto:13911100061@163.com">13911100061@163.com</a></p>
-    <p><a href="./">BrickStep Home</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+    <p class="muted">BrickStep is independent and is not affiliated with or endorsed by the LEGO Group, BrickLink, or the LDraw organization.</p>
   </main>
 </body>
 </html>

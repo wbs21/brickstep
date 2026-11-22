@@ -18,6 +18,14 @@
       <image:loc>https://wbs21.github.io/brickstep/assets/03-parts-search-web.jpg</image:loc>
       <image:title>Search and export a bill of materials in BrickStep</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://wbs21.github.io/brickstep/assets/01-viewer-iphone-web.jpg</image:loc>
+      <image:title>BrickStep on iPhone with a completed 3D model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wbs21.github.io/brickstep/assets/02-part-selection-iphone-web.jpg</image:loc>
+      <image:title>Selecting a part on iPhone in BrickStep</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://wbs21.github.io/brickstep/support.html</loc>

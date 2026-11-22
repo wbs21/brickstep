@@ -65,6 +65,12 @@
     .hero-copy { min-width: 0; }
     .hero-media { margin: 0; }
     .hero-media a { display: block; }
+    .hero-devices {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(120px, .58fr);
+      gap: 12px;
+      align-items: end;
+    }
     .hero-media img {
       width: 100%;
       max-height: 620px;
@@ -179,8 +185,8 @@
     "name": "BrickStep",
     "applicationCategory": "GraphicsApplication",
     "applicationSubCategory": "3D model viewer",
-    "operatingSystem": "iPadOS 18.0 or later",
-    "softwareVersion": "1.0.0",
+    "operatingSystem": "iOS 18.0 or later (iPhone and iPad)",
+    "softwareVersion": "1.1.0",
     "description": "BrickStep is a 3D viewer for LDraw, MPD, and BrickLink Studio models. Explore building steps, inspect parts, and export a bill of materials.",
     "url": "https://wbs21.github.io/brickstep/",
     "downloadUrl": "https://apps.apple.com/us/app/brickstep/id6837612015",
@@ -228,13 +234,18 @@
           <a class="button" href="https://apps.apple.com/us/app/brickstep/id6837612015">View on the App Store</a>
           <a class="button secondary" href="https://www.youtube.com/shorts/UNNlC1eFwHs">Watch the 15-second demo</a>
         </nav>
-        <p class="store-note">Current release: iPadOS 18+ and U.S. App Store. The App Store listing and YouTube video are currently in English.</p>
+        <p class="store-note">Current release: iOS 18+ for iPhone and iPad, available through the U.S. App Store. The App Store listing and YouTube video are currently in English.</p>
       </div>
       <figure class="hero-media">
-        <a href="https://apps.apple.com/us/app/brickstep/id6837612015" aria-label="View BrickStep on the U.S. App Store">
-          <img src="assets/01-viewer-web.jpg" width="825" height="1100" alt="BrickStep showing a seven-step brick model with step navigation and a parts list">
-        </a>
-        <figcaption>Explore a model, navigate its steps, and inspect the current parts list.</figcaption>
+        <div class="hero-devices">
+          <a href="https://apps.apple.com/us/app/brickstep/id6837612015" aria-label="View BrickStep on the U.S. App Store">
+            <img src="assets/01-viewer-web.jpg" width="825" height="1100" alt="BrickStep on iPad showing a seven-step brick model with step navigation and a parts list">
+          </a>
+          <a href="https://apps.apple.com/us/app/brickstep/id6837612015" aria-label="View BrickStep for iPhone on the U.S. App Store">
+            <img src="assets/01-viewer-iphone-web.jpg" width="506" height="1100" alt="BrickStep on iPhone showing a completed seven-step brick model">
+          </a>
+        </div>
+        <figcaption>Explore the same local model workflow on iPhone and iPad.</figcaption>
       </figure>
     </header>
 
@@ -260,7 +271,7 @@
       <p>These screens use BrickStep's bundled demonstration model. Switch between the model view, matching-part highlights, and the searchable parts list.</p>
       <div class="gallery">
         <figure>
-          <img src="assets/05-part-selection-web.jpg" width="720" height="960" loading="lazy" alt="A selected yellow part with matching yellow instances highlighted in a 3D brick model">
+          <img src="assets/02-part-selection-iphone-web.jpg" width="442" height="960" loading="lazy" alt="BrickStep on iPhone with a selected green part and matching instances highlighted">
           <figcaption>Select a part and reveal matching instances.</figcaption>
         </figure>
         <figure>
@@ -315,7 +326,7 @@
 
     <section class="cta-panel">
       <h2>Ready to inspect your model?</h2>
-      <p>BrickStep is available through the U.S. App Store. The current release requires iPadOS 18 or later.</p>
+      <p>BrickStep is available through the U.S. App Store. The current release requires iOS or iPadOS 18 or later.</p>
       <nav class="actions" aria-label="Download BrickStep">
         <a class="button" href="https://apps.apple.com/us/app/brickstep/id6837612015">View BrickStep on the App Store</a>
       </nav>

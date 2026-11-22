@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add this line after publishing sitemap.xml:
-# Sitemap: https://wbs21.github.io/brickstep/sitemap.xml
+Sitemap: https://wbs21.github.io/brickstep/sitemap.xml

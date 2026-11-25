@@ -79,7 +79,7 @@
         "name": "Does BrickStep render BrickLink Studio instruction page layouts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Studio instruction page layouts, callouts, and custom instruction graphics are not rendered. Step order and added parts are derived from the embedded LDraw data."
+          "text": "BrickStep uses Studio model.ins pages for step order and per-step camera views, and shows a parts callout for the current step. Custom page layouts, image callouts, and custom instruction graphics are not reproduced."
         }
       },
       {
@@ -87,7 +87,7 @@
         "name": "Does BrickStep require an account or network connection?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "BrickStep does not require an account or login. Model parsing and view preparation occur locally on the iPad."
+          "text": "BrickStep does not require an account or login. Model parsing and view preparation occur locally on the device. A network connection is only needed for the optional LDraw.org links or an App Store purchase."
         }
       },
       {
@@ -95,7 +95,23 @@
         "name": "How do I connect an external LDraw library?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tap LDraw Library and select the root folder of an LDraw installation containing the parts and p folders. Access is limited to the folder selected by the user."
+          "text": "Open Settings & Help, download complete.zip from library.ldraw.org, unzip it in Files, then tap Choose LDraw Folder and select the ldraw folder containing parts and p. Access is limited to the folder selected by the user."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does BrickStep cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BrickStep is free to download and includes 10 model imports. A one-time $4.99 BrickStep Pro purchase removes the import limit. There is no subscription. Models already imported remain available without upgrading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find models to open?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The LDraw Official Model Repository at omr.ldraw.org hosts free community recreations of LEGO sets as .mpd files, many with building steps. Open Settings & Help, tap Browse OMR Models, download a model, then tap Open a Downloaded Model."
         }
       }
     ]
@@ -119,6 +135,10 @@
     </nav>
     <h2>Supported Files</h2>
     <p>BrickStep opens local <code>.io</code>, <code>.ldr</code>, and <code>.mpd</code> files. Tap <strong>Open Model</strong> and choose a file from Files or another document provider.</p>
+    <h2>Pricing and Imports</h2>
+    <p>BrickStep is free to download and includes <strong>10 model imports</strong>. A one-time <strong>$4.99 BrickStep Pro</strong> purchase removes the import limit. There is no subscription.</p>
+    <p>Only unique, successfully imported models use an import. Re-opening a model you already imported, cancelling an import, and files that fail to load do not use an import.</p>
+    <p>Models you already imported stay available without upgrading. Use <strong>Restore Purchases</strong> in Settings &amp; Help or on the Pro screen to restore a previous purchase.</p>
     <h2>Frequently Asked Questions</h2>
     <details>
       <summary>Can I open more than one model?</summary>
@@ -126,11 +146,15 @@
     </details>
     <details>
       <summary>Do I need to upload my model?</summary>
-      <p>No. BrickStep processes the selected file locally on the iPad. No account or developer-operated cloud service is required.</p>
+      <p>No. BrickStep processes the selected file locally on the device. No account or developer-operated cloud service is required. A network connection is only needed for the optional LDraw.org links or an App Store purchase.</p>
     </details>
     <details>
-      <summary>Why does my Studio file not look like a Studio instruction page?</summary>
-      <p>BrickStep is a 3D model viewer rather than a Studio page-layout renderer. Studio instruction page layouts, callouts, and custom instruction graphics are not rendered. Step order and added parts are derived from the embedded LDraw data.</p>
+      <summary>Why does my Studio file not look exactly like a Studio instruction page?</summary>
+      <p>BrickStep is a 3D viewer, not a page-layout renderer. It uses Studio <code>model.ins</code> pages for step order and per-step camera views, and shows a parts callout for the current step. Custom page layouts, image callouts, and custom instruction graphics are not reproduced.</p>
+    </details>
+    <details>
+      <summary>Where can I download models?</summary>
+      <p>The LDraw Official Model Repository at <a href="https://omr.ldraw.org/">omr.ldraw.org</a> hosts free community recreations of LEGO sets in <code>.mpd</code> format, many with building steps. In BrickStep, open <strong>Settings &amp; Help</strong>, tap <strong>Browse OMR Models</strong>, download a model, then tap <strong>Open a Downloaded Model</strong>. These are community models, not official LEGO instructions.</p>
     </details>
     <details>
       <summary>How do I export a parts list?</summary>
@@ -141,13 +165,16 @@
       <p>Include the file extension, approximate part and step counts, device model, OS version, and the error message. Do not share a private model file unless you are comfortable doing so.</p>
     </details>
     <h2>Detailed Geometry</h2>
-    <p>For complete part geometry, tap <strong>LDraw Library</strong> and select the root of an LDraw installation that contains the <code>parts</code> and <code>p</code> folders. Access is limited to the folder selected by the user.</p>
+    <p>For complete part geometry, open <strong>Settings &amp; Help</strong>, tap <strong>Download LDraw Library</strong>, unzip <code>complete.zip</code> in Files, then tap <strong>Choose LDraw Folder</strong> and select the <code>ldraw</code> folder containing <code>parts</code> and <code>p</code>. Access is limited to the folder selected by the user.</p>
+    <p>The download is about 140 MB and the unzipped library is about 530 MB. Studio <code>.io</code> files often include the parts they use; <code>.ldr</code> and <code>.mpd</code> files benefit most from the external library.</p>
     <h2>Gestures</h2>
     <p>Drag with one finger to orbit, pinch to zoom, and drag with two fingers to pan. Double-tap the viewport to reset the camera.</p>
     <h2>Large Models</h2>
     <p>BrickStep uses local resource safeguards for large files. If a model exceeds a limit, the app shows an error instead of continuing indefinitely. Very large historical geometry may use simplified display geometry.</p>
     <h2>Studio Content</h2>
-    <p>Studio instruction page layouts, callouts, and custom instruction graphics are not currently rendered. Step order and added parts are derived from embedded LDraw data.</p>
+    <p>BrickStep reads Studio <code>model.ins</code> pages for step order and camera views, and shows a parts callout for the current step. Custom page layouts, image callouts, and custom instruction graphics are not reproduced.</p>
+    <h2>Settings &amp; Help</h2>
+    <p>The gear button opens setup guidance for the LDraw parts library and LDraw OMR, plus Pro status, step-view toggles, privacy, support, and rating links.</p>
     <h2>Contact</h2>
     <p>Email: <a href="mailto:13911100061@163.com">13911100061@163.com</a></p>
     <p class="muted">BrickStep is independent and is not affiliated with or endorsed by the LEGO Group, BrickLink, or the LDraw organization.</p>
